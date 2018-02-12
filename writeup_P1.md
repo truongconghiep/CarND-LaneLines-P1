@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image3]: ./test_images/rgb_w.jpg "rgb_w"
 [image4]: ./test_images/hls_y.jpg "hls_y"
 [image5]: ./test_images/color_threshold.jpg "color_threshold"
-[image6]: ./test_images/Gaussian_Blur.jpg "Gaussian_Blur"
+[image6]: ./test_images/Gassian_Blur.jpg "Gassian_Blur"
 [image7]: ./test_images/Canny_Edges.jpg "Canny_Edges"
 [image8]: ./test_images/Region_Of_Interest.jpg "Region_Of_Interest"
 
@@ -68,7 +68,7 @@ The purpose o this step is to cut down on visual noise and ensure that only the 
 ![alt text][image6]
 
 #### Edge extraction
-In this step, canny edge detection algorithm is applied to detect all edges in the gray image from the previous step
+In this step, canny edge detection algorithm is applied to detect all edges in the gray image from the previous step.
 ![alt text][image7]
 
 #### Region masking to extract the region of interest
