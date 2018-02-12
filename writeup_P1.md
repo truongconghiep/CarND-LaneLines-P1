@@ -125,4 +125,3 @@ A possible improvement would be to determine the region of interest dynamically.
 Detected lines of a previous frame can be used in the current frame to detect the current lane lines. The old lines help to average changes in the current frame and play a roll of low pass filter 
 to stabilize the detection of lane lines
 
-Another potential improvement could be to ...
