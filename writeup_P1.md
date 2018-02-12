@@ -96,6 +96,7 @@ In this step, based on the lines detected by hough transform 2 lines will be dra
 slope and center of all hough lines must be calculated with following formulas:
 
 slope = (y2 - y1)/(x2 - x1)
+
 center = [(x1 + x2)/2, (y1 + y2)/2]
 
 Based on the calculated slope the lines will be seperated in 2 groups: left and right. If slop is positive then put it in the right group, else put it in the left group. Here a slop threshold can
