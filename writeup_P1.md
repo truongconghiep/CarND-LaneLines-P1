@@ -47,11 +47,27 @@ Let's use the image below as our original:
 
 Since most of lanelines are yellow or white, we can firstly filter out the pixels in a picture, which roughly represent the lanelines on the road.
 To do that, first yellow thresholds are applied to the original image in BGR color space to determine the pixels of yellow lanelines. Other pixels are removed from the image.
-Then the result is then converted to gray scale
+Then the result is then converted to gray scale. The result image of yellow threshold in RGB color space is shown below.
 ![alt text][image2]
+The next step of color masking is filer out white pixels, which represent while lanelines. Very similar to filtering out yellow pixels, white thesholds are applied to the original image
+to filter out white pixels. The result image of white threshold in RBG color space is shown in the image below.
 ![alt text][image3]
+Because yellow thresholding in the first step is not as effective as filtering while pixels, an additional filtering step is required to extract yellow pixel. In this step the yellow pixels are 
+extracted in HLS color space. This method provides a very reliable result. The input image is first converted into HLS color space, then yellow thresholds are applied to filter the yellow pixels.
+The result image of yellow threshold in RGB color space is shown below.
 ![alt text][image4]
+After filtering all pixels of lanelines the result images of the 3 steps above are combined together to have an gray image, which despites the lanelines in the original image.
 ![alt text][image5]
+
+#### Gaussian blurring
+
+#### Edge extraction
+
+#### Region masking to extract the region of interest
+
+#### Hough Transform - Average lines
+
+#### Draw lines
 
 
 
