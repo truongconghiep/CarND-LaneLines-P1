@@ -99,7 +99,7 @@ slope = (y2 - y1)/(x2 - x1)
 
 center = [(x1 + x2)/2, (y1 + y2)/2]
 
-Based on the calculated slope the lines will be seperated in 2 groups: left and right. If slop is positive then put it in the right group, else put it in the left group. Here a slop threshold can
+Based on the calculated slope the lines will be separated in 2 groups: left and right. If slop is positive then put it in the right group, else put it in the left group. Here a slop threshold can
 be introduced to filter out the lines, which should not represent any lane lines. For example lines, which have very small slope. After that an average slope and center for each group will be 
 calculated. These slop and center represent the left and right land lines in the original image. Unfortunately, with slope and center we can still not draw the lines on the original image, thus
 we must find out 2 end points of the line. To determine these 2 points we just give 2 y-coordinates and calculate the corresponding x-coordinates with following formula:
@@ -110,16 +110,19 @@ Hence we have 2 end points of the line, we can draw it on original image.
 ![alt text][image9]
 
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. The Pipeline’s Shortcomings
+
+One potential shortcoming would be the function *Draw_Lines*. This function cannot draw horizontal lines, because their slopes are infinity.
+
+Another shortcoming could be the fixed vertices by determining the region of interest. The coordinates of the region of interest were hard-coded, therefore it cannot react to any terrace changes, 
+for example when car is cresting a hill or coming out of a valley.
 
 
-One potential shortcoming would be what would happen when ... 
+### 3. Possible Pipeline Improvements
 
-Another shortcoming could be ...
+A possible improvement would be to determine the region of interest dynamically.
 
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
+Detected lines of a previous frame can be used in the current frame to detect the current lane lines. The old lines help to average changes in the current frame and play a roll of low pass filter 
+to stabilize the detection of lane lines
 
 Another potential improvement could be to ...
