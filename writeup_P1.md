@@ -18,6 +18,9 @@ The goals / steps of this project are the following:
 [image3]: ./test_images/rgb_w.jpg "rgb_w"
 [image4]: ./test_images/hls_y.jpg "hls_y"
 [image5]: ./test_images/color_threshold.jpg "color_threshold"
+[image6]: ./test_images/Gaussian_Blur.jpg "Gaussian_Blur"
+[image7]: ./test_images/Canny_Edges.jpg "Canny_Edges"
+[image8]: ./test_images/Region_Of_Interest.jpg "Region_Of_Interest"
 
 
 ---
@@ -52,7 +55,7 @@ Then the result is then converted to gray scale. The result image of yellow thre
 The next step of color masking is filer out white pixels, which represent while lanelines. Very similar to filtering out yellow pixels, white thesholds are applied to the original image
 to filter out white pixels. The result image of white threshold in RBG color space is shown in the image below.
 ![alt text][image3]
-Because yellow thresholding in the first step is not as effective as filtering while pixels, an additional filtering step is required to extract yellow pixel. In this step the yellow pixels are 
+Because yellow thresholding in the first step is not as effective as filtering while pixels, an additional filtering step is required to extract yellow pixels. In this step the yellow pixels are 
 extracted in HLS color space. This method provides a very reliable result. The input image is first converted into HLS color space, then yellow thresholds are applied to filter the yellow pixels.
 The result image of yellow threshold in RGB color space is shown below.
 ![alt text][image4]
@@ -61,9 +64,19 @@ After filtering all pixels of lanelines the result images of the 3 steps above a
 
 #### Gaussian blurring
 
+The purpose o this step is to cut down on visual noise and ensure that only the sharpest edges get through in edge detection step.
+![alt text][image6]
+
 #### Edge extraction
+In this step, canny edge detection algorithm is applied to detect all edges in the gray image from the previous step
+![alt text][image7]
 
 #### Region masking to extract the region of interest
+By applying this step we can ignore the pixels, where lane lines shouldn't be. In this step a fixed region in the image is chosen before performing hough transform. All pixels in
+this region are preserved, the others outside this region will be removed.
+![alt text][image8]
+
+
 
 #### Hough Transform - Average lines
 
